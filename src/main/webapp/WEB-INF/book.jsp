@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="bookproject.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<jsp:useBean id="book" type="bookproject.Book" scope="request" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,8 +28,8 @@ Language: <input type="text" name="language">
 <div>
 <table>
 <tr><td>Id</td><td>Title</td><td>Author</td></tr>
-<% for(Book book : bookDao.getAllBooks()) { %>
-	<tr><td><%= book.getId() %></td><td><%= book.getTitle() %></td><td><%= book.getAuthor() %></td>
+<% for(Book b : bookDao.getAllBooks()) { %>
+	<tr><td><%= b.getId() %></td><td><%= b.getTitle() %></td><td><%= b.getAuthor() %></td>
 <% } %>
 </table>
 </div>
@@ -42,11 +42,11 @@ Id: <input type="text" name="id">
 </form>
 </div>
 
-<c:if test="${not empty bookFound}">
-<jsp:useBean id="bookFound" type="bookproject.Book" scope="request" />
+<c:if test="${not empty book}">
+
 <div>
 <h1>Book found!</h1>
-<c:out value="${bookFound.title}" /><br>
+<c:out value="${book.title}" /><br>
 </div>
 </c:if>
 </c:if>

@@ -42,7 +42,7 @@ public class BookController {
 		} else if (request.getParameter("get-book-by-id") != null) {
 			book = bookDao.getBookById(Long.parseLong(request.getParameter("id")));
 			if(book == null) return new ModelAndView("person.jsp");//, "bookFound", book);
-			return new ModelAndView("book.jsp", "bookFound", book);
+			return new ModelAndView("book.jsp?book-found=1", "book", book);
 		}
 		return new ModelAndView("book.jsp", "book", book);
 	}
