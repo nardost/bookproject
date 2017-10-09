@@ -1,4 +1,5 @@
 pipeline {
+	agent any
 	stages {
 		stage('SCM Repo') {
 			git 'https://github.com/nardost/bookproject.git'
