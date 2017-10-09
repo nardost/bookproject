@@ -1,15 +1,14 @@
 node {
-   //def mvnHome = tool 'M3'
-   stage('Preparation') { // for display purposes
-      // Get some code from a GitHub repository
-      git 'https://github.com/nardost/bookproject.git'
-   }
-   stage('Build') {
-      // Run the maven build
-        sh "mvn -Dmaven.test.failure.ignore clean package"
-   }
-   stage('Results') {
-      junit '**/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.jar'
-   }
+	stage('Pull from SCM Repo') {
+		git 'https://github.com/nardost/bookproject.git'
+	}
+	stage('Build') {
+		sh "mvn -Dmaven.test.failure.ignore clean package"
+	}
+	stage('Test Phase') {
+		junit '**/target/surefire-reports/TEST-*.xml'
+	}
+	stage('Package') {
+		archive 'target/*.jar' 
+	}
 }
