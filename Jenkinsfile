@@ -1,10 +1,8 @@
 node {
-	stage('Build Master') {
+	stage('SCM Repo') {
 		git 'https://github.com/nardost/bookproject.git'
-		sh "mvn -Dmaven.test.failure.ignore clean package"
 	}
-	stage('Build QA') {
-		git 'https://github.com/nardost/bookproject/tree/qa'
+	stage('Build') {
 		sh "mvn -Dmaven.test.failure.ignore clean package"
 	}
 	stage('Test Phase') {
