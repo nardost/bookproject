@@ -20,13 +20,24 @@ public class TestBook {
 	
 	@BeforeClass
 	public static void suiteSetup() {
-		book = new Book("And Quiet Flows the Don", 1000, "String language", 30, Date.valueOf("1990-01-01"), "String isbn", "String author");
+		book = new Book("And Quiet Flows the Don", 568, "English", 1, Date.valueOf("1989-12-17"), "0679725210", "Mikhail Sholokhov");
 	}
 	
 	@Test
 	public void performFirstTest() {
 		assertEquals("And Quiet Flows the Don", book.getTitle());
 	}
+	
+	@Test
+	public void performSecondTest() {
+		assertTrue(book.getAuthor() != null);
+	}
+	
+	@Test
+	public void performThirdTest() {
+		assertTrue(Integer.class.isInstance(book.getEdition()));
+	}
+	
 	@After
 	public void cleanupTest() {
 		
