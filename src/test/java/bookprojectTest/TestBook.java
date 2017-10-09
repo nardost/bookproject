@@ -35,7 +35,7 @@ public class TestBook {
 	
 	@Test
 	public void performThirdTest() {
-		assertTrue(Integer.class.isInstance(book.getEdition()));
+		assertTrue(String.class.isInstance(book.getEdition()));
 	}
 	
 	@After
