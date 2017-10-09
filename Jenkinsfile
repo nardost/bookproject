@@ -1,6 +1,6 @@
 node {
 	stage('SCM Repo') {
-			chekout scm //git 'https://github.com/nardost/bookproject.git'
+			checkout scm //git 'https://github.com/nardost/bookproject.git'
 		}
 		stage('Build') {
 			sh 'mvn -Dmaven.test.failure.ignore clean package'
