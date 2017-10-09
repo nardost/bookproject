@@ -7,7 +7,12 @@ node {
 		}
 		stage('Test Phase') {
 			junit '**/target/surefire-reports/TEST-*.xml'
-			mail bcc: '', body: 'Sneding and email through the Jenkinsfile', cc: 'nardostd@yahoo.com', from: 'nardos.tessema@gmail.com', replyTo: 'nardos.tessema@gmail.com', subject: 'Jenkins is Working', to: 'nardostd@gmail.com'
+			mail to: "nardostd@gmail.com",
+			cc: "nardostd@yahoo.com",
+			replyTo: "nardos.tessema@gmail.com",
+			from: "nardos.tessema@gmail.com",
+			subject: "Jenkins Job '${JOB_NAME}' ('${BUILD_NUMBER}')"
+			body: "Please check the Jenkins pipeline at ${BUILD_URL}."
 		}
 		stage('Package') {
 			archive 'target/*.jar' 
