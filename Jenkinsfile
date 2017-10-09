@@ -1,7 +1,5 @@
-pipeline {
-	agent any
-	stages {
-		stage('SCM Repo') {
+node {
+	stage('SCM Repo') {
 			git 'https://github.com/nardost/bookproject.git'
 		}
 		stage('Build') {
@@ -12,13 +10,5 @@ pipeline {
 		}
 		stage('Package') {
 			archive 'target/*.jar' 
-		}
-	}
-	post {
-		always { }
-		success { }
-		failure { }
-		unstable { }
-		changed { }
 	}
 }
