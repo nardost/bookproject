@@ -9,16 +9,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping; //spring-webmvc dependency
 import org.springframework.web.servlet.ModelAndView; //comes from spring-webmvc dependency
 
+
 @Controller
 public class BookController {
 	
 	@Autowired
 	private BookDao bookDao;
 	
+	
 	@RequestMapping(value="/book")
 	public ModelAndView bookEntry(HttpServletRequest request) {
 		Book book = new Book("String title", 1000, "String language", 30, Date.valueOf("1990-01-01"), "String isbn", "String author");
-		if(request.getParameter("submit") != null) {
+		/*if(request.getParameter("submit") != null) {
 			String title;
 			int pages;
 			String language;
@@ -42,8 +44,9 @@ public class BookController {
 		} else if (request.getParameter("get-book-by-id") != null) {
 			book = bookDao.getBookById(Long.parseLong(request.getParameter("id")));
 			if(book == null) return new ModelAndView("person.jsp");//, "bookFound", book);
-			return new ModelAndView("book.jsp?book-found=1", "book", book);
+			return new ModelAndView("book.jsp", "book", book);
 		}
-		return new ModelAndView("book.jsp", "book", book);
+		return new ModelAndView("book.jsp", "book", book);*/
+			return new ModelAndView("book", "book", book);
 	}
 }

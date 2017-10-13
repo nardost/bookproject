@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -19,8 +20,19 @@ public class TestBook {
 	}
 	
 	@BeforeClass
-	public static void suiteSetup() {
-		book = new Book("And Quiet Flows the Don", 568, "English", 1, Date.valueOf("1989-12-17"), "0679725210", "Mikhail Sholokhov");
+	public static void suiteSetup() {		
+	}
+	
+	@Before
+	public void prepareTest() {
+		book = new Book(
+				"And Quiet Flows the Don", 
+				568, 
+				"English", 
+				1, 
+				Date.valueOf("1989-12-17"), 
+				"0679725210", 
+				"Mikhail Sholokhov");
 	}
 	
 	@Test

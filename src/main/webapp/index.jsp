@@ -1,1 +1,1 @@
-<jsp:forward page="book.html" />
+<jsp:forward page="/book"/>
