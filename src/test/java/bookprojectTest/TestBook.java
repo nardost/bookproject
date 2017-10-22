@@ -32,7 +32,7 @@ public class TestBook {
 				1, 
 				Date.valueOf("1989-12-17"), 
 				"0679725210", 
-				"Alexander Solzhenstyn");
+				"Alexander So.    lzhenstyn");
 	}
 	
 	@Test
