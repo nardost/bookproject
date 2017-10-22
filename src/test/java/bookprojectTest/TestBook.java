@@ -32,7 +32,7 @@ public class TestBook {
 				1, 
 				Date.valueOf("1989-12-17"), 
 				"067972ttttt5210", 
-				"Alexjkhafsdjkfhjksdfjhkdfgjgdfjhkgdfhadsjkfadsjkfsjkander So.    lzhenstyn");
+				"Alexjkhafsdjkfhjksdfjhkdfgjgdfjhkgdfhadsjkfadsjkfsjkander Solzhenstyn");
 	}
 	
 	@Test
