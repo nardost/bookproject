@@ -1,7 +1,7 @@
 node {
 	checkout scm
 	stage('Build') {
-		echo 'mvn -Dmaven.test.failure.ignore clean package'
+		sh 'mvn -Dmaven.test.failure.ignore clean package'
 	}
 	stage('Test') {
 		junit '**/target/surefire-reports/TEST-*.xml'
