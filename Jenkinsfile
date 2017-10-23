@@ -10,7 +10,7 @@ node {
 			replyTo: 'nardos.tessema@gmail.com',
 			from: 'nardos.tessema@gmail.com',
 			subject: "Jenkins Job ${JOB_NAME} #${BUILD_NUMBER}",
-			body: "Hello There! Please check the Jenkins pipeline at ${BUILD_URL}."
+			body: "Hello There!!!! Please check the Jenkins pipeline at ${BUILD_URL}."
 	}
 	stage('Deploy') {
 		archive 'target/*.jar' 
